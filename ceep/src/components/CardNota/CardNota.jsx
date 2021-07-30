@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import "./estilo.css";
+import { Box } from "../../styles";
 
 class CardNota extends Component {
-    state = {  }
     render() { 
         return (
-            <div className="card-nota">
+            <Box color="#e9e9e9">
                 <header className="card-nota_cabecalho">
-                    <h3 className="card-nota_titulo">Título</h3>
+                    <h3 className="card-nota_titulo">{this.props.titulo}</h3>
                 </header>
-                <p className="car-nota_texto">Sua nota está aqui;</p>
-            </div>
+                <p className="car-nota_texto">{this.props.texto}</p>
+            </Box>
         );
     }
 }
