@@ -1,0 +1,6 @@
+.lista-notas {
+    display: flex;
+    flex-direction:row;
+    list-style: none;
+    flex-wrap: wrap;
+}
