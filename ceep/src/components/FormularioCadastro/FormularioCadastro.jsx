@@ -3,9 +3,18 @@ import "./estilo.css";
 
 class FormularioCadastro extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this._titulo = "";
+        this._texto = "";
+    }
+
+    get texto(){
+        return this._texto;
+    }
+
+    set texto(value){
+        this._texto = value;
     }
 
     get titulo(){
@@ -18,22 +27,36 @@ class FormularioCadastro extends Component {
 
     handleMudancaTitulo(evento){
         this.titulo = evento.target.value;
-        console.log(this.titulo);
+    }
+
+    handleMudancaTexto(evento){
+        this.texto = evento.target.value;
+    }
+
+    criarNota(evento){
+        evento.preventDefault();
+        evento.stopPropagation();
+        this.props.criarNota(this.titulo, this.texto);
     }
 
     render(){
         return(
-            <form className="form-cadastro">
+            <form className="form-cadastro"
+                onSubmit={this.criarNota.bind(this)}
+            >
                 <input
                     placeholder="Titulo"
                     type="text"
                     className="form-cadastro_input"
-                    onChange={this.handleMudancaTitulo}
+                    /* O .bind() passa qual a instância que o método deve estar 
+                     (para usar o 'this' corretamente!). */
+                    onChange={this.handleMudancaTitulo.bind(this)}
                 />
                 <textarea
                     rows={15}
                     placeholder="Insira o seu texto..."
                     className="form-cadastro_input"
+                    onChange={this.handleMudancaTexto.bind(this)}
                 />
                 <button className="form-cadastro_input form-cadastro_submit">
                     Criar nota!
