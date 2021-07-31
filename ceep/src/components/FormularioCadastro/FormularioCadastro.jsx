@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Radio } from "../../styles";
 import "./estilo.css";
 
 class FormularioCadastro extends Component {
@@ -7,6 +8,7 @@ class FormularioCadastro extends Component {
         super(props);
         this._titulo = "";
         this._texto = "";
+        this.cor = "#e9e9e9";
     }
 
     get texto(){
@@ -33,10 +35,14 @@ class FormularioCadastro extends Component {
         this.texto = evento.target.value;
     }
 
+    handleMudancaCor(evento){
+        this.cor = evento.target.value;
+    }
+
     criarNota(evento){
         evento.preventDefault();
         evento.stopPropagation();
-        this.props.criarNota(this.titulo, this.texto);
+        this.props.criarNota(this.titulo, this.texto, this.cor);
     }
 
     render(){
@@ -57,6 +63,25 @@ class FormularioCadastro extends Component {
                     placeholder="Insira o seu texto..."
                     className="form-cadastro_input"
                     onChange={this.handleMudancaTexto.bind(this)}
+                />
+                <Radio
+                    groupBy="cor"
+                    label="Cinza"
+                    value="#e9e9e9"
+                    color={this.handleMudancaCor.bind(this)}
+                    checked={true}
+                />
+                <Radio
+                    groupBy="cor"
+                    label="Amarelo"
+                    value="#f5f5dc"
+                    color={this.handleMudancaCor.bind(this)}
+                />
+                <Radio
+                    groupBy="cor"
+                    label="Vermelho"
+                    value="#ff6961"
+                    color={this.handleMudancaCor.bind(this)}
                 />
                 <button className="form-cadastro_input form-cadastro_submit">
                     Criar nota!

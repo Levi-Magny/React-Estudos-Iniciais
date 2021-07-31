@@ -11,3 +11,16 @@ export const Box = styled.div`
     box-shadow: 0 0 4px #222;
     padding: 16px;
 `;
+
+export const Radio = props => (
+    <div>
+        <input
+            name = {props.groupBy}
+            type = "radio"
+            value = {props.value}
+            onFocus = {props.color}
+            defaultChecked = {props.checked}
+        />
+        <p>{props.label}</p>
+    </div>
+);

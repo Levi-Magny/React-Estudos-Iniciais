@@ -5,7 +5,7 @@ import { Box } from "../../styles";
 class CardNota extends Component {
     render() { 
         return (
-            <Box color="#e9e9e9">
+            <Box color={this.props.cor}>
                 <header className="card-nota_cabecalho">
                     <h3 className="card-nota_titulo">{this.props.titulo}</h3>
                 </header>
