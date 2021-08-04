@@ -8,6 +8,7 @@ class CardNota extends Component {
             <Box color={this.props.cor}>
                 <header className="card-nota_cabecalho">
                     <h3 className="card-nota_titulo">{this.props.titulo}</h3>
+                    <hr/>
                 </header>
                 <p className="car-nota_texto">{this.props.texto}</p>
             </Box>
