@@ -8,7 +8,7 @@ export const Box = styled.div`
     background-color: ${props => `${props.color}`};
     border-radius: 4px;
     flex-wrap: wrap;
-    box-shadow: 0 0 4px #222;
+    box-shadow: 0 0 4px #222221;
     padding: 16px;
 `;
 
