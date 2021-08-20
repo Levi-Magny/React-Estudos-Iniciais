@@ -1,0 +1,13 @@
+.categorias{
+    flex-grow: 2;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.lista-categoria{
+    list-style-type: none;
+    padding: 0 24px;
+}
+.categorias_item{
+    margin: 12px;
+    display: inline;
+}
