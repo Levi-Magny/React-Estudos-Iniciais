@@ -1,13 +1,22 @@
 .categorias{
-    flex-grow: 2;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    flex-direction: row;
+    display: flex;
+    margin-top: 1rem;
 }
 .lista-categoria{
+    flex: 1;
     list-style-type: none;
-    padding: 0 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .categorias_item{
-    margin: 12px;
-    display: inline;
+    background-color: var(--secundaria);
+    color: var(--fundo);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.lista-categorias_input {
+    margin-right: 20px;
 }

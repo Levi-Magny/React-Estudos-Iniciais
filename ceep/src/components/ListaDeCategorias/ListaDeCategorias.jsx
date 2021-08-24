@@ -2,6 +2,13 @@ import React, { Component } from  'react';
 import "./estilo.css";
 
 class ListaDeCategorias extends Component {
+    _handleEventInput(e){
+        if(e.key === "Enter"){
+            console.log("Criar Categoria");
+            this.props.criarCategoria(e.target.value);
+            e.target.value = "";
+        }
+    }
     render() {
         return (
             <div className="categorias">
@@ -14,6 +21,7 @@ class ListaDeCategorias extends Component {
                 type="text"
                 className="lista-categorias_input"
                 placeholder="Nova categoria"
+                onKeyUp={this._handleEventInput.bind(this)}
                 />
             </div>
         );
